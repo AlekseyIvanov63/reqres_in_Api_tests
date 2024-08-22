@@ -1,6 +1,6 @@
 import allure
 import requests
-from api_base.base import Base
+from base_requests.base import Base
 
 class GetBase(Base):
 

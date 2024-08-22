@@ -1,12 +1,12 @@
 import pytest
 import allure
-from api_base.base import Base
 from model.base_model import Response
-from api_base.get_base import GetBase
+from base_requests.get_base import GetBase
+from base_requests.base import Base
 
 
 @allure.epic("API")
-@allure.title('Проверка статуса кода 200 Get /api/users ')
+@allure.title('Проверка статуса кода 200 GET /api/users ')
 @pytest.mark.parametrize("expected", [200])
 def test_status_code_request_get(endpoint_api_users, expected):
     response = GetBase().get_request(endpoint_api_users)
@@ -14,7 +14,7 @@ def test_status_code_request_get(endpoint_api_users, expected):
 
 
 @allure.epic("API")
-@allure.title('Проверка json-схемы ответа Get /api/users ')
+@allure.title('Проверка json-схемы ответа GET /api/users ')
 @pytest.mark.parametrize("expected", [200])
 def test_json_schema_request_get(endpoint_api_users, expected):
     response = GetBase().get_request(endpoint_api_users)
@@ -23,7 +23,7 @@ def test_json_schema_request_get(endpoint_api_users, expected):
 
 
 @allure.epic("API")
-@allure.title('Проверка headers ответа Get /api/users ')
+@allure.title('Проверка headers ответа GET /api/users ')
 @pytest.mark.parametrize("expected", [200])
 def test_headers_request_get(endpoint_api_users, expected):
     response = GetBase().get_request(endpoint_api_users)
