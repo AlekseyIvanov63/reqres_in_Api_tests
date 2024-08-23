@@ -73,3 +73,13 @@ def test_post_negative_empty_job(endpoint_api_users, expected):
     params = DataPost().empty_job_params
     response = PostBase().post_request(endpoint_api_users, params)
     Base().status_code_checking(response, expected)
+
+
+@allure.epic("API")
+@allure.feature('Negative tests POST')
+@allure.title('Проверка статуса кода 400 POST, пустое тело запроса')
+@pytest.mark.parametrize("expected", [400])
+def test_post_negative_empty_job(endpoint_api_users, expected):
+    params = DataPost().empty_body_params
+    response = PostBase().post_request(endpoint_api_users, params)
+    Base().status_code_checking(response, expected)

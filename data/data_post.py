@@ -34,3 +34,7 @@ class DataPost:
         "name": "morpheus",
         "job": ""
     }
+
+    empty_body_params = {
+
+    }
