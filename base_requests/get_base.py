@@ -8,7 +8,7 @@ class GetBase(Base):
     def get_request(self, endpoint):
         return requests.get(endpoint)
 
-    @allure.step('Проверить headers запроса')
+    @allure.step('Проверить headers GET запроса')
     def headers_checking_get(self, response):
         assert response.headers['Content-Type'] == 'application/json; charset=utf-8'
         assert response.headers['Transfer-Encoding'] == 'chunked'

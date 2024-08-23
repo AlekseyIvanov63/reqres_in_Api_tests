@@ -1,6 +1,7 @@
 import allure
 import requests
 from base_requests.base import Base
+from data.data_post import DataPost
 
 class PostBase(Base):
 
@@ -13,3 +14,18 @@ class PostBase(Base):
         else:
             print(f"Произошла ошибка: {response.status_code}")
             print(response.text)
+
+
+    @allure.step('Сравнение body ответа с body запроса')
+    def comparison_body_response(self, response):
+        assert DataPost().params['name'] == response['name']
+        assert DataPost().params['job'] == response['job']
+
+    @allure.step('Проверить headers POST запроса')
+    def headers_checking_post(self, response):
+        assert response.headers['Content-Type'] == 'application/json; charset=utf-8'
+        assert response.headers['Connection'] == 'keep-alive'
+        assert response.headers['X-Powered-By'] == 'Express'
+        assert response.headers['Server'] == 'cloudflare'
+        assert response.headers['Via'] == '1.1 vegur'
+        assert response.headers['CF-Cache-Status'] == 'DYNAMIC'

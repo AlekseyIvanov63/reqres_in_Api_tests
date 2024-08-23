@@ -13,7 +13,7 @@ class Support(BaseModel):
     url: Optional[HttpUrl]
     text: str
 
-class Response(BaseModel):
+class GetResponse(BaseModel):
     page: int
     per_page: int
     total: int
