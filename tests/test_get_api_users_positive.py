@@ -6,6 +6,7 @@ from base_requests.base import Base
 
 
 @allure.epic("API")
+@allure.feature('Positive tests GET')
 @allure.title('Проверка статуса кода 200 GET /api/users ')
 @pytest.mark.parametrize("expected", [200])
 def test_get_status_code(endpoint_api_users, expected):
@@ -14,6 +15,7 @@ def test_get_status_code(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Positive tests GET')
 @allure.title('Проверка json-схемы ответа GET /api/users ')
 @pytest.mark.parametrize("expected", [200])
 def test_get_json_schema(endpoint_api_users, expected):
@@ -23,6 +25,7 @@ def test_get_json_schema(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Positive tests GET')
 @allure.title('Проверка headers ответа GET /api/users ')
 @pytest.mark.parametrize("expected", [200])
 def test_get_headers(endpoint_api_users, expected):

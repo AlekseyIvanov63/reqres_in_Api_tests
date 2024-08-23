@@ -7,6 +7,7 @@ from model.post_model import PostResponse
 
 
 @allure.epic("API")
+@allure.feature('Positive tests POST')
 @allure.title('Проверка статуса кода 201 POST /api/users ')
 @pytest.mark.parametrize("expected", [201])
 def test_post_status_code(endpoint_api_users, expected):
@@ -16,6 +17,7 @@ def test_post_status_code(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Positive tests POST')
 @allure.title('Проверка json-схемы ответа POST /api/users ')
 @pytest.mark.parametrize("expected", [201])
 def test_post_json_schema(endpoint_api_users, expected):
@@ -26,6 +28,7 @@ def test_post_json_schema(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Positive tests POST')
 @allure.title('Проверка body ответа POST /api/users ')
 @pytest.mark.parametrize("expected", [201])
 def test_post_json_schema(endpoint_api_users, expected):
@@ -38,6 +41,7 @@ def test_post_json_schema(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Positive tests POST')
 @allure.title('Проверка headers ответа POST /api/users ')
 @pytest.mark.parametrize("expected", [201])
 def test_post_headers(endpoint_api_users, expected):

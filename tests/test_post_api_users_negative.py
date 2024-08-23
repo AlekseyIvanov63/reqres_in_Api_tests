@@ -6,6 +6,7 @@ from data.data_post import DataPost
 
 
 @allure.epic("API")
+@allure.feature('Negative tests POST')
 @allure.title('Проверка статуса кода 400 POST, нет поля "name" в запросе')
 @pytest.mark.parametrize("expected", [400])
 def test_post_negative_no_name(endpoint_api_users, expected):
@@ -15,6 +16,7 @@ def test_post_negative_no_name(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Negative tests POST')
 @allure.title('Проверка статуса кода 400 POST, нет поля "job" в запросе')
 @pytest.mark.parametrize("expected", [400])
 def test_post_negative_no_job(endpoint_api_users, expected):
@@ -24,6 +26,7 @@ def test_post_negative_no_job(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Negative tests POST')
 @allure.title('Проверка статуса кода 400 POST, без тела запроса')
 @pytest.mark.parametrize("expected", [400])
 def test_post_negative_no_body(endpoint_api_users, expected):
@@ -33,6 +36,7 @@ def test_post_negative_no_body(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Negative tests POST')
 @allure.title('Проверка статуса кода 400 POST, количество символов в "name" 100')
 @pytest.mark.parametrize("expected", [400])
 def test_post_negative_max_name(endpoint_api_users, expected):
@@ -42,6 +46,7 @@ def test_post_negative_max_name(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Negative tests POST')
 @allure.title('Проверка статуса кода 400 POST, количество символов в "job" 100')
 @pytest.mark.parametrize("expected", [400])
 def test_post_negative_max_job(endpoint_api_users, expected):
@@ -51,6 +56,7 @@ def test_post_negative_max_job(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Negative tests POST')
 @allure.title('Проверка статуса кода 400 POST, пустое поле "name"')
 @pytest.mark.parametrize("expected", [400])
 def test_post_negative_empty_name(endpoint_api_users, expected):
@@ -60,6 +66,7 @@ def test_post_negative_empty_name(endpoint_api_users, expected):
 
 
 @allure.epic("API")
+@allure.feature('Negative tests POST')
 @allure.title('Проверка статуса кода 400 POST, пустое поле "job"')
 @pytest.mark.parametrize("expected", [400])
 def test_post_negative_empty_job(endpoint_api_users, expected):
