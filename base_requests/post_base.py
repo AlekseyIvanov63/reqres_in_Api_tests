@@ -18,8 +18,8 @@ class PostBase(Base):
 
     @allure.step('Сравнение body ответа с body запроса')
     def comparison_body_response(self, response):
-        assert DataPost().params['name'] == response['name']
-        assert DataPost().params['job'] == response['job']
+        assert DataPost().posit_params['name'] == response['name']
+        assert DataPost().posit_params['job'] == response['job']
 
     @allure.step('Проверить headers POST запроса')
     def headers_checking_post(self, response):

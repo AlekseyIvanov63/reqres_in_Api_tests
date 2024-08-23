@@ -10,7 +10,7 @@ from model.post_model import PostResponse
 @allure.title('Проверка статуса кода 201 POST /api/users ')
 @pytest.mark.parametrize("expected", [201])
 def test_post_status_code(endpoint_api_users, expected):
-    params = DataPost().params
+    params = DataPost().posit_params
     response = PostBase().post_request(endpoint_api_users, params)
     Base().status_code_checking(response, expected)
 
@@ -19,7 +19,7 @@ def test_post_status_code(endpoint_api_users, expected):
 @allure.title('Проверка json-схемы ответа POST /api/users ')
 @pytest.mark.parametrize("expected", [201])
 def test_post_json_schema(endpoint_api_users, expected):
-    params = DataPost().params
+    params = DataPost().posit_params
     response = PostBase().post_request(endpoint_api_users, params)
     Base().status_code_checking(response, expected)
     PostResponse(**response.json())
@@ -29,7 +29,7 @@ def test_post_json_schema(endpoint_api_users, expected):
 @allure.title('Проверка body ответа POST /api/users ')
 @pytest.mark.parametrize("expected", [201])
 def test_post_json_schema(endpoint_api_users, expected):
-    params = DataPost().params
+    params = DataPost().posit_params
     response = PostBase().post_request(endpoint_api_users, params)
     Base().status_code_checking(response, expected)
     data = response.json()
@@ -41,7 +41,7 @@ def test_post_json_schema(endpoint_api_users, expected):
 @allure.title('Проверка headers ответа POST /api/users ')
 @pytest.mark.parametrize("expected", [201])
 def test_post_headers(endpoint_api_users, expected):
-    params = DataPost().params
+    params = DataPost().posit_params
     response = PostBase().post_request(endpoint_api_users, params)
     Base().status_code_checking(response, expected)
     PostResponse(**response.json())
